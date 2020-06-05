@@ -5,12 +5,15 @@
     <dd>A docker image that downloads data from the web into a volume. </dd>
 </dl>
 
-
-### Notes
-
-In progress ...
+<dl>
+    <dt>State</dt>
+    <dd>In progress</dd>
+</dl>
 
 <br>
+<br>
+
+### Notes
 
 #### Running
 An input argument example
