@@ -23,8 +23,8 @@ def main():
     # Read-in the metadata of files that would be downloaded
     metadata = src.io.source.Source(var=var).exc()
 
-    # Unload
-    src.read.interface.Interface(var=var).exc(metadata=metadata)
+    # Unload: Beware of metadata.loc[:4], switch back to metadata after testing period.
+    src.read.interface.Interface(var=var).exc(metadata=metadata.loc[:4])
 
 
 if __name__ == '__main__':
