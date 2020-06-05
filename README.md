@@ -16,12 +16,14 @@
 ### Notes
 
 #### Running
-An input argument example
-* https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/readerpython/parameters.yml
 
 ````bash
-python src/main.py https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/readerpython/parameters.yml
+python src/main.py 
+    https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/readerpython/parameters.yml
 ````
+
+Wherein [parameter.yml](https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/readerpython/parameters.yml) is an input argument example.
+
 
 <br>
 
