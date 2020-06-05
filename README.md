@@ -1,12 +1,16 @@
 ## Reader: Python
 
-Objective
-A docker image that downloads data from the web into a docker volume.  
+<dl>
+    <dt>Objective</dt>
+    <dd>A docker image that downloads data from the web into a volume. </dd>
+</dl>
 
 
 ### Notes
 
-Continuously updated ...
+In progress ...
+
+<br>
 
 #### Running
 An input argument example
@@ -22,8 +26,8 @@ python src/main.py https://raw.githubusercontent.com/greyhypotheses/dictionaries
 
 * The switch from `dask` to `multiprocessing`
 * Dockerfile
-* GitHub Actions .yml: For (a) pytest, coverage, and pylint tests, (b) building & deploying docker images.  Continuing deploying images to docker hub
-* Tests: GitHub Actions will highlight deficiencies w.r.t. tests and/or conventions
+* GitHub Actions .yml: For (a) automated pytest, coverage, and pylint tests, (b) building & deploying docker images.  Continuing deploying images to docker hub
+* Automated Tests: GitHub Actions will highlight deficiencies w.r.t. tests and/or conventions
 * Brief, but comprehensible, docstrings throughout
 
 
