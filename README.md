@@ -33,4 +33,11 @@ python src/main.py https://raw.githubusercontent.com/greyhypotheses/dictionaries
 * Automated Tests: GitHub Actions will highlight deficiencies w.r.t. tests and/or conventions
 * Brief, but comprehensible, docstrings throughout
 
+<br>
 
+#### Packages
+
+Refer to [filter.txt](./docs/filter.txt) & [requiremnts](requirements.txt)
+
+* `pip freeze -r docs/filter.txt > requirements.txt`
+* `conda install -c anaconda pillow==7.1.2`
