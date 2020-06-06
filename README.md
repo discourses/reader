@@ -26,7 +26,7 @@ Wherein [parameter.yml](https://raw.githubusercontent.com/greyhypotheses/diction
 
 parameter | type | Descriptions
 ---  | ---  | ---
-`sourceURL` | str | The root URL from whence files will be downloaded
+`rootURL` | str | The root URL from whence files will be downloaded
 `metadataFileURL` | str | A CSV file that includes a field of file names that would be downloaded
 `fileStringsField` | str | The name of the field of file names
 `fileStringsIncludeExt` | bool | Do the file names, in the file names field, include file extensions?
@@ -50,4 +50,4 @@ parameter | type | Descriptions
 Refer to [filter.txt](./docs/filter.txt) & [requirements](requirements.txt)
 
 * `pip freeze -r docs/filter.txt > requirements.txt`
-* `conda install -c anaconda pillow==7.1.2`
+* `conda install -c anaconda pillow==7.1.2`  Dask installs an old version of pillow which triggers a GitHub security alert, hence, this command replaces the old version; another command option is `conda update -c anaconda pillow`
