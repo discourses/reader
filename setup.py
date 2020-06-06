@@ -3,7 +3,7 @@ import setuptools
 
 NAME = 'readerpython'
 VERSION = '0.0.1'
-DESCRIPTION = 'For unloading online file for local use'
+DESCRIPTION = 'For unloading online files into a docker volume'
 AUTHOR = 'greyhypotheses'
 URL = 'https://github.com/greyhypotheses/readerpython'
 PYTHON_REQUIRES = '=3.6.7'
