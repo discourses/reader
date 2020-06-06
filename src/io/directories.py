@@ -20,7 +20,7 @@ class Directories:
         """
 
         # Foremost, delete files
-        for path in [self.var.archives, self.var.data]:
+        for path in [self.var.data]:
             files_ = [os.remove(os.path.join(base, file))
                       for base, _, files in os.walk(path) for file in files]
 
@@ -28,10 +28,10 @@ class Directories:
                 raise Exception('Unable to delete all files within path {}'.format(path))
 
         # ... then, directories
-        for path in [self.var.archives, self.var.data]:
+        for path in [self.var.data]:
             directories_ = [os.removedirs(os.path.join(base, directory))
-             for base, directories, _ in os.walk(path, topdown=False) for directory in directories
-             if os.path.exists(os.path.join(base, directory))]
+                            for base, directories, _ in os.walk(path, topdown=False) for directory in directories
+                            if os.path.exists(os.path.join(base, directory))]
 
             if any(directories_):
                 raise Exception('Unable to delete all directories within path {}'.format(path))
@@ -43,7 +43,7 @@ class Directories:
         :return: None
         """
 
-        for path in [self.var.archives, self.var.data]:
+        for path in [self.var.data]:
             if not os.path.exists(path):
                 os.makedirs(path)
 
