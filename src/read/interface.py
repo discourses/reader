@@ -48,6 +48,7 @@ class Interface:
 
         print('Download step starting ...')
 
+        # This set-up makes it easy to consider other types of archived files over time
         if self.var.source.archived:
             {
                 '.zip': self.pool.starmap(self.dearchive.unzip, [i for i in urlstrings])
