@@ -31,8 +31,8 @@ class Interface:
         :return:
         """
 
-        urlstrings = [{i} for i in metadata.urlstring.to_list()]
-        filestrings = [{i} for i in metadata.filestring.to_list()]
+        urlstrings = metadata.urlstring.to_list()
+        filestrings = metadata.filestring.to_list()
 
         return urlstrings, filestrings
 
@@ -51,7 +51,7 @@ class Interface:
         # This set-up makes it easy to consider other types of archived files over time
         if self.var.source.archived:
             {
-                '.zip': self.pool.starmap(self.dearchive.unzip, [i for i in urlstrings])
+                '.zip': self.pool.starmap(self.dearchive.unzip, [{i} for i in urlstrings])
             }.get(self.var.source.ext, LookupError('Unknown extension'))
         else:
             self.pool.starmap(self.retrieve.exc, zip(urlstrings, filestrings))
