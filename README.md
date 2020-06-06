@@ -24,12 +24,14 @@ python src/main.py
 
 Wherein [parameter.yml](https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/readerpython/parameters.yml) is an input argument example.
 
-* `sourceURL`: str, The root URL from whence files will be downloaded
-* `metadataFileURL`: str, A CSV file that includes a field of file names that would be downloaded
-* `fileStringsField`: str, The name of the field of file names
-* `fileStringsIncludeExt`: bool, Do the file names, in the file names field, include file extensions?
-* `archived`: bool, Archived files?  If true, they will be dearchived.  Presently, only zip files can be dearchived.
-* `ext`: File extension, e.g., .zip.  This parameter is mandatory if `fileStringsIncludeExt` is false.
+parameter | type | Descriptions
+---  | ---  | ---
+`sourceURL` | str | The root URL from whence files will be downloaded
+`metadataFileURL` | str | A CSV file that includes a field of file names that would be downloaded
+`fileStringsField` | str | The name of the field of file names
+`fileStringsIncludeExt` | bool | Do the file names, in the file names field, include file extensions?
+`archived` | bool | Archived files?  If true, they will be dearchived.  Presently, only zip files can be dearchived.
+`ext` | str | File extension, e.g., .zip.  This parameter is mandatory if `fileStringsIncludeExt` is false.
 
 <br>
 
