@@ -39,7 +39,7 @@ class Arguments:
         :return:
         """
 
-        assert isinstance(var.source.sourceURL, str)
+        assert isinstance(var.source.rootURL, str)
         assert isinstance(var.source.metadataFileURL, str)
         assert isinstance(var.source.fileStringsField, str)
         assert isinstance(var.source.fileStringsIncludeExt, bool)
@@ -59,6 +59,8 @@ class Arguments:
         req = requests.get(url=urlstring)
         text = yaml.safe_load(req.text)
         var = dotmap.DotMap(text)
+
+        # Minimal verification of the contents of the YAML
         self.ascertain(var)
 
         # For var.source.metadataFileURL
@@ -66,7 +68,6 @@ class Arguments:
                       'dtype': {var.source.fileStringsField: 'str'}}
 
         # Hence, add default directories
-        var.archives = os.path.join(self.root, 'archives')
         var.data = os.path.join(self.root, 'data')
 
         return var
