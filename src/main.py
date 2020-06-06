@@ -24,7 +24,7 @@ def main():
     metadata = src.io.source.Source(var=var).exc()
 
     # Unload: Beware of metadata.loc[:4], switch back to metadata after testing period.
-    src.read.interface.Interface(var=var).exc(metadata=metadata.loc[:4])
+    src.read.interface.Interface(var=var).exc(metadata=metadata.loc[:8])
 
 
 if __name__ == '__main__':
