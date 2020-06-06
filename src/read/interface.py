@@ -54,6 +54,6 @@ class Interface:
                 '.zip': self.pool.starmap(self.dearchive.unzip, [i for i in urlstrings])
             }.get(self.var.source.ext, LookupError('Unknown extension'))
         else:
-            self.pool.starmap(self.retrieve.exc, [(i, j) for (i, j) in zip(urlstrings, filestrings)])
+            self.pool.starmap(self.retrieve.exc, zip(urlstrings, filestrings))
 
         print('Download step ended')
