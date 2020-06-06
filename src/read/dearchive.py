@@ -12,7 +12,7 @@ class Dearchive:
         :param var: Dot map of ...
         """
 
-        self.v = var
+        self.var = var
 
     @staticmethod
     def read(urlstring: str) -> bytes:
@@ -38,4 +38,4 @@ class Dearchive:
         """
 
         obj = zipfile.ZipFile(io.BytesIO(self.read(urlstring=urlstring)))
-        obj.extractall(path=self.v.data)
+        obj.extractall(path=self.var.data)
