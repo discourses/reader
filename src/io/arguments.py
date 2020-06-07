@@ -14,7 +14,7 @@ class Arguments:
         self.root = os.getcwd()
 
     @staticmethod
-    def url(urlstring: str):
+    def url(urlstring: str) -> requests.models.Response:
         """
         Ascertains that the URL argument is valid
 
@@ -28,7 +28,7 @@ class Arguments:
         except requests.exceptions.RequestException as e:
             raise e
 
-        return urlstring
+        return req
 
     @staticmethod
     def ascertain(var):
@@ -40,7 +40,14 @@ class Arguments:
         """
 
         assert isinstance(var.source.rootURL, str)
+
         assert isinstance(var.source.metadataFileURL, str)
+        try:
+            req = requests.get(url=var.source.metadataFileURL)
+            req.raise_for_status()
+        except requests.exceptions.RequestException as e:
+            raise e
+
         assert isinstance(var.source.fileStringsField, str)
         assert isinstance(var.source.fileStringsIncludeExt, bool)
         assert isinstance(var.source.archived, bool)
@@ -48,16 +55,15 @@ class Arguments:
         if not var.source.fileStringsIncludeExt:
             assert var.source.ext is not None
 
-    def parameters(self, urlstring: str):
+    def parameters(self, elements: requests.models.Response):
         """
-        Reads and structures the contents of the file that urlstring links to
+        Reads and structures the contents of the file that elements links to
 
-        :param urlstring: A URL string (to a YAML file)
+        :param elements: A URL string (to a YAML file)
         :return: The dot map of the contents of the YAML file
         """
 
-        req = requests.get(url=urlstring)
-        text = yaml.safe_load(req.text)
+        text = yaml.safe_load(elements.text)
         var = dotmap.DotMap(text)
 
         # Minimal verification of the contents of the YAML
