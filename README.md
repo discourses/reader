@@ -45,6 +45,13 @@ parameter | type | Descriptions
 
 <br>
 
+#### Considerations
+
+* At present, data is always downloaded into a volume named `data`.  This set-up might be changed such that data is downloaded into a volume whose name is declared in the parameters file.
+
+
+<br>
+
 #### Packages
 
 Refer to [filter.txt](./docs/filter.txt) & [requirements](requirements.txt)
