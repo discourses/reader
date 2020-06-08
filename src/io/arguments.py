@@ -1,12 +1,12 @@
 """
 Module arguments
 """
+import argparse
 import os
 
 import dotmap
 import requests
 import yaml
-import argparse
 
 
 class Arguments:
@@ -47,7 +47,7 @@ class Arguments:
 
         :return: Integer denoting the number of files to download
         """
-        if not int(limit) > 0:
+        if int(limit) <= 0:
             raise argparse.ArgumentTypeError("The argument '--select' must be a positive integer "
                                              "greater than or 0")
         return int(limit)
