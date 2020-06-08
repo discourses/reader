@@ -2,8 +2,6 @@ import pytest
 
 import src.io.arguments
 
-arg = src.io.arguments.Arguments()
-
 
 class TestArguments:
 
@@ -16,10 +14,12 @@ class TestArguments:
         return 'https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/readerpython/parameters.yml'
 
     def test_url(self, urlstring, arguments):
-        string = arguments.url(urlstring)
-        assert string is not None
+        req = arguments.url(urlstring)
+        assert req.status_code == 200, "The input YAML mut be a valid URL string"
 
     def test_parameters(self, urlstring, arguments):
-        var = arguments.parameters(urlstring)
-        assert isinstance(var.source.sourceURL, str)
-        assert isinstance(var.source.archived, bool)
+        req = arguments.url(urlstring)
+        var = arguments.parameters(req)
+
+        assert isinstance(var.kwargs, dict), "A dictionary of parameters is required for reading the metadata file"
+        assert isinstance(var.data, str), "A directory name is required for the downloaded files"
