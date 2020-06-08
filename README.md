@@ -11,6 +11,9 @@
 </dl>
 
 <br>
+
+![Reader Project](https://github.com/greyhypotheses/readerpython/workflows/Reader%20Project/badge.svg?branch=develop) develop
+
 <br>
 
 ### Notes
@@ -18,7 +21,7 @@
 #### Running
 
 ````bash
-python src/main.py 
+python src/main.py
     https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/readerpython/parameters.yml
 ````
 
