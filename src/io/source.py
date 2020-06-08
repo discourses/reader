@@ -1,3 +1,6 @@
+"""
+Module source
+"""
 import dask.dataframe as dd
 
 
@@ -39,9 +42,11 @@ class Source:
         """
 
         if self.var.source.fileStringsIncludeExt:
-            return filename
+            string = filename
         else:
-            return filename + self.var.source.ext
+            string = filename + self.var.source.ext
+
+        return string
 
     def urlstring(self, filename):
         """
