@@ -58,9 +58,11 @@ class Source:
         value = self.var.source.rootURL + filename
 
         if self.var.source.fileStringsIncludeExt:
-            return value
+            string =  value
         else:
-            return value + self.var.source.ext
+            string = value + self.var.source.ext
+
+        return string
 
     def exc(self):
         """
