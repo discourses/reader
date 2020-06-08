@@ -5,6 +5,9 @@ import os
 
 
 class Arguments:
+    """
+    Class Arguments: Disaggregates the input argument
+    """
 
     def __init__(self):
         """
