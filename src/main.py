@@ -25,6 +25,10 @@ def main():
                         type=arguments.url,
                         help='The URL of a YAML of parameters; refer to the README notes.  The argument '
                              'parser returns a blob of elements')
+    parser.add_argument('--limit',
+                        type=arguments.select,
+                        help='An optional integer that downloads the number of files requested rather '
+                             'than all files')
     args = parser.parse_args()
 
     # Get the data parameters encoded by the input
@@ -37,7 +41,12 @@ def main():
     metadata = src.io.source.Source(var=var).exc()
 
     # Unload: Beware of metadata.loc[:4], switch back to metadata after testing period.
-    src.read.interface.Interface(var=var).exc(metadata=metadata.loc[:4])
+    if args.limit < metadata.shape[0]:
+        nfiles = args.limit
+    else:
+        nfiles = metadata.shape[0]
+
+    src.read.interface.Interface(var=var).exc(metadata=metadata.loc[:nfiles])
 
 
 if __name__ == '__main__':
