@@ -12,11 +12,13 @@
 
 <br>
 
-![Reader Project](https://github.com/greyhypotheses/readerpython/workflows/Reader%20Project/badge.svg?branch=develop, "develop")
+develop <br>
+![Reader Project](https://github.com/greyhypotheses/readerpython/workflows/Reader%20Project/badge.svg?branch=develop)
 
-![Reader Project](https://github.com/greyhypotheses/readerpython/workflows/Reader%20Project/badge.svg?branch=master, "master")
+master <br>
+![Reader Project](https://github.com/greyhypotheses/readerpython/workflows/Reader%20Project/badge.svg?branch=master)
 
-<br>
+
 
 ### Notes
 
