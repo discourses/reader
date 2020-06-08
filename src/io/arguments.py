@@ -1,7 +1,11 @@
+"""
+Module arguments
+"""
+import os
+
+import dotmap
 import requests
 import yaml
-import dotmap
-import os
 
 
 class Arguments:
@@ -28,8 +32,8 @@ class Arguments:
         try:
             req = requests.get(url=urlstring)
             req.raise_for_status()
-        except requests.exceptions.RequestException as e:
-            raise e
+        except requests.exceptions.RequestException as err:
+            raise err
 
         return req
 
@@ -48,8 +52,8 @@ class Arguments:
         try:
             req = requests.get(url=var.source.metadataFileURL)
             req.raise_for_status()
-        except requests.exceptions.RequestException as e:
-            raise e
+        except requests.exceptions.RequestException as err:
+            raise err
 
         assert isinstance(var.source.fileStringsField, str)
         assert isinstance(var.source.fileStringsIncludeExt, bool)
