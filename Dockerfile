@@ -1,7 +1,7 @@
 # Dockerfile
 
 # A python runtime base image
-FROM python:3.6.7-buster
+FROM python:3.6-buster
 
 # pip
 RUN pip install --upgrade pip

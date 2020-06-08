@@ -1,10 +1,21 @@
+"""
+Module main
+"""
 import argparse
 import os
 import sys
-import yaml
 
 
 def main():
+    """
+    The entry point of te readerpython package.  It expects a single argument; the URL to a YAML. The
+    YAML must hve the structure outlined in
+        https://github.com/greyhypotheses/dictionaries/blob/master/readerpython/parameters.yml
+    More notes at
+        https://github.com/greyhypotheses/readerpython
+
+    :return:
+    """
     # Instances
     arguments = src.io.arguments.Arguments()
 
@@ -37,4 +48,5 @@ if __name__ == '__main__':
     import src.io.directories
     import src.io.source
     import src.read.interface
+
     main()

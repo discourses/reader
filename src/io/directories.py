@@ -1,7 +1,13 @@
+"""
+Module directories
+"""
 import os
 
 
 class Directories:
+    """
+    Class Directories: Preparing directories
+    """
 
     def __init__(self, var):
         """
@@ -48,6 +54,10 @@ class Directories:
                 os.makedirs(path)
 
     def exc(self):
+        """
+        Entry point
+        :return:
+        """
 
         self.cleanup()
         self.paths()

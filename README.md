@@ -11,6 +11,11 @@
 </dl>
 
 <br>
+
+![Reader Project](https://github.com/greyhypotheses/readerpython/workflows/Reader%20Project/badge.svg?branch=develop, "develop")
+
+![Reader Project](https://github.com/greyhypotheses/readerpython/workflows/Reader%20Project/badge.svg?branch=master, "master")
+
 <br>
 
 ### Notes
@@ -18,7 +23,7 @@
 #### Running
 
 ````bash
-python src/main.py 
+python src/main.py
     https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/readerpython/parameters.yml
 ````
 
@@ -57,4 +62,5 @@ parameter | type | Descriptions
 Refer to [filter.txt](./docs/filter.txt) & [requirements](requirements.txt)
 
 * `pip freeze -r docs/filter.txt > requirements.txt`
-* `conda install -c anaconda pillow==7.1.2`  Dask installs an old version of pillow which triggers a GitHub security alert, hence, this command replaces the old version; another command option is `conda update -c anaconda pillow`
+* `conda install -c anaconda pillow==7.1.2`  Dask installs an old version of pillow which triggers a GitHub security alert, hence, this command replaces the old version.
+* Always ascertain that the `dask` setting in requirements.txt is `dask[complete]`; this avoids GitHub Actions errors.
