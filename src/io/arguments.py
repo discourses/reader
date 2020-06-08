@@ -6,6 +6,7 @@ import os
 import dotmap
 import requests
 import yaml
+import argparse
 
 
 class Arguments:
@@ -36,6 +37,20 @@ class Arguments:
             raise err
 
         return req
+
+    @staticmethod
+    def select(limit) -> int:
+        """
+        Ascertains that the optional --limit argument is valid
+
+        :param limit: An optional text denoting the number of files to download
+
+        :return: Integer denoting the number of files to download
+        """
+        if not int(limit) > 0:
+            raise argparse.ArgumentTypeError("The argument '--select' must be a positive integer "
+                                             "greater than or 0")
+        return int(limit)
 
     @staticmethod
     def ascertain(var):
