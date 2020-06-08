@@ -1,3 +1,6 @@
+"""
+Module directories
+"""
 import os
 
 
