@@ -4,7 +4,10 @@ import dask.dataframe as dd
 class Source:
 
     def __init__(self, var):
-        self.name = ''
+        """
+
+        :param var: The dot map of parameters
+        """
         self.var = var
 
     def read(self) -> dd.DataFrame:
@@ -12,6 +15,10 @@ class Source:
         Reads-in the metadata file
         :return:
         """
+
+        # pandas.DataFrame.read_csv(filepath_or_buffer=self.var.source.metadataFileURL, sep=',',
+        # header=self.var.kwargs['header'], usecols=self.var.kwargs['usecols'],
+        # encoding=self.var.kwargs['encoding'], dtype=self.var.kwargs['dtype'])
 
         try:
             data = dd.read_csv(urlpath=self.var.source.metadataFileURL,

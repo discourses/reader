@@ -57,10 +57,8 @@ class Arguments:
 
     def parameters(self, elements: requests.models.Response):
         """
-        Reads and structures the contents of the file that elements links to
-
-        :param elements: A URL string (to a YAML file)
-        :return: The dot map of the contents of the YAML file
+        :param elements: The content of the input YAML file
+        :return: A dot map of the parameters in the YAML file; and supplementary parameters
         """
 
         text = yaml.safe_load(elements.text)
