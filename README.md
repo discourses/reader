@@ -24,12 +24,19 @@ master <br>
 
 #### Running
 
-````bash
+```bash
 python src/main.py
     https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/readerpython/parameters.yml
-````
+```
 
-Wherein [parameter.yml](https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/readerpython/parameters.yml) is an input argument example.
+or
+
+```bash
+python src/main.py
+    https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/readerpython/parameters.yml --limit 31
+```
+
+Wherein [parameter.yml](https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/readerpython/parameters.yml) is an input argument of parameters that guides the downloading of data files, whilst the optional argument `--limit` is used to specify the number of files to download.
 
 parameter | type | Descriptions
 ---  | ---  | ---
