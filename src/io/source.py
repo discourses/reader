@@ -58,7 +58,7 @@ class Source:
         value = self.var.source.rootURL + filename
 
         if self.var.source.fileStringsIncludeExt:
-            string =  value
+            string = value
         else:
             string = value + self.var.source.ext
 
