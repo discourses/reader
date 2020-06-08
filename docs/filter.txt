@@ -6,3 +6,4 @@ pylint
 requests
 dotmap
 pillow
+pandas
