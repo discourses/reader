@@ -2,6 +2,9 @@ import dask.dataframe as dd
 
 
 class Source:
+    """
+    Class Source: Structures the metadata of a source
+    """
 
     def __init__(self, var):
         """
