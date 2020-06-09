@@ -20,7 +20,7 @@ class TestSource:
         return src.io.source.Source(var=var)
 
     def test_read(self, source):
-        metadata: pandas.DataFrame = source.read().compute(schedule='processes')
+        metadata: pandas.DataFrame = source.read()
 
         assert not metadata.empty, "The metadata file of the data source should not be empty."
         assert metadata.shape[1] == 1, "The number of fields should be 1; the field of file names."
