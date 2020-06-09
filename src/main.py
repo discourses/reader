@@ -41,11 +41,14 @@ def main():
     metadata = src.io.source.Source(var=var).exc()
 
     # Unload: Beware of metadata.loc[:4], switch back to metadata after testing period.
-    if args.limit < metadata.shape[0]:
-        nfiles = args.limit
-    else:
-        nfiles = metadata.shape[0]
+    limit = metadata.shape[0] if not isinstance(args.limit, int) else args.limit
 
+    if limit >= metadata.shape[0]:
+        nfiles = metadata.shape[0]
+    else:
+        nfiles = args.limit
+
+    # Hence
     src.read.interface.Interface(var=var).exc(metadata=metadata.loc[:nfiles])
 
 
