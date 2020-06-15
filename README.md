@@ -72,4 +72,5 @@ Refer to [filter.txt](./docs/filter.txt) & [requirements](requirements.txt)
 
 * `pip freeze -r docs/filter.txt > requirements.txt`
 * `conda install -c anaconda pillow==7.1.2`  Dask installs an old version of pillow which triggers a GitHub security alert, hence, this command replaces the old version.
+* `conda install -c anaconda python-graphviz` (Unable to include in filter.txt)
 * Always ascertain that the `dask` setting in requirements.txt is `dask[complete]`; this avoids GitHub Actions errors.
