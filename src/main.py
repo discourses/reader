@@ -9,7 +9,7 @@ import sys
 def main():
     """
     The entry point of te readerpython package.  It expects a single argument; the URL to a YAML. The
-    YAML must hve the structure outlined in
+    YAML must have the structure outlined in
         https://github.com/greyhypotheses/dictionaries/blob/master/readerpython/parameters.yml
     More notes at
         https://github.com/greyhypotheses/readerpython
