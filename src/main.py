@@ -9,7 +9,7 @@ import sys
 def main():
     """
     The entry point of te readerpython package.  It expects a single argument; the URL to a YAML. The
-    YAML must hve the structure outlined in
+    YAML must have the structure outlined in
         https://github.com/greyhypotheses/dictionaries/blob/master/readerpython/parameters.yml
     More notes at
         https://github.com/greyhypotheses/readerpython
@@ -25,6 +25,10 @@ def main():
                         type=arguments.url,
                         help='The URL of a YAML of parameters; refer to the README notes.  The argument '
                              'parser returns a blob of elements')
+    parser.add_argument('--limit',
+                        type=arguments.select,
+                        help='An optional integer that downloads the number of files requested rather '
+                             'than all files')
     args = parser.parse_args()
 
     # Get the data parameters encoded by the input
@@ -37,7 +41,15 @@ def main():
     metadata = src.io.source.Source(var=var).exc()
 
     # Unload: Beware of metadata.loc[:4], switch back to metadata after testing period.
-    src.read.interface.Interface(var=var).exc(metadata=metadata.loc[:4])
+    limit = metadata.shape[0] if not isinstance(args.limit, int) else args.limit
+
+    if limit >= metadata.shape[0]:
+        nfiles = metadata.shape[0]
+    else:
+        nfiles = args.limit
+
+    # Hence
+    src.read.interface.Interface(var=var).exc(metadata=metadata.loc[:nfiles])
 
 
 if __name__ == '__main__':

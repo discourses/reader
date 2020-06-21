@@ -1,7 +1,7 @@
 """
 Module source
 """
-import dask.dataframe as dd
+import pandas as pd
 
 
 class Source:
@@ -16,19 +16,20 @@ class Source:
         """
         self.var = var
 
-    def read(self) -> dd.DataFrame:
+    def read(self) -> pd.DataFrame:
         """
         Reads-in the metadata file
+
+        data = dask.dataframe.read_csv(urlpath=self.var.source.metadataFileURL,
+                                       **self.var.kwargs).repartition(npartitions=8)
+
         :return:
         """
 
-        # pandas.DataFrame.read_csv(filepath_or_buffer=self.var.source.metadataFileURL, sep=',',
-        # header=self.var.kwargs['header'], usecols=self.var.kwargs['usecols'],
-        # encoding=self.var.kwargs['encoding'], dtype=self.var.kwargs['dtype'])
-
         try:
-            data = dd.read_csv(urlpath=self.var.source.metadataFileURL,
-                               **self.var.kwargs).repartition(npartitions=8)
+            data = pd.read_csv(filepath_or_buffer=self.var.source.metadataFileURL, sep=',',
+                               header=self.var.kwargs['header'], usecols=self.var.kwargs['usecols'],
+                               encoding=self.var.kwargs['encoding'], dtype=self.var.kwargs['dtype'])
         except OSError as error:
             raise error
 
@@ -64,7 +65,7 @@ class Source:
 
         return string
 
-    def exc(self):
+    def exc(self) -> pd.DataFrame:
         """
 
         :return: A DataFrame of URL & file strings; each includes file extensions
@@ -76,5 +77,4 @@ class Source:
         data['urlstring'] = self.urlstring(data[self.var.source.fileStringsField])
         data['filestring'] = self.filestring(data[self.var.source.fileStringsField])
 
-        # Hence
-        return data.compute(scheduler='processes')
+        return data
