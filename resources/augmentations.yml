@@ -1,0 +1,7 @@
+source:
+  rootURL: "https://github.com/discourses/dermatology/raw/master/augmentations/images/"
+  metadataFileURL: "https://raw.githubusercontent.com/discourses/dermatology/master/augmentations/inventoryOfZips.csv"
+  fileStringsField: "filename"
+  fileStringsIncludeExt: false
+  archived: true
+  ext: ".zip"
