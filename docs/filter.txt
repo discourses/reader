@@ -1,5 +1,4 @@
 dask
-pillow
 pytest
 coverage
 pytest-cov
