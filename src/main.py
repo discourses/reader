@@ -53,9 +53,9 @@ def main():
 
 
 if __name__ == '__main__':
-    root = os.getcwd()
-    sys.path.append(os.path.join(root))
-    sys.path.append(os.path.join(root, 'src'))
+    ROOT = os.getcwd()
+    sys.path.append(os.path.join(ROOT))
+    sys.path.append(os.path.join(ROOT, 'src'))
     import src.io.arguments
     import src.io.directories
     import src.io.source
