@@ -1,11 +1,11 @@
 import setuptools
 
 
-NAME = 'readerpython'
-VERSION = '0.0.1'
+NAME = 'reader'
+VERSION = '0.0.2'
 DESCRIPTION = 'For unloading online files into a docker volume'
 AUTHOR = 'greyhypotheses'
-URL = 'https://github.com/greyhypotheses/readerpython'
+URL = 'https://github.com/discourses/reader'
 PYTHON_REQUIRES = '=3.7.10'
 
 with open('README.md') as f:
