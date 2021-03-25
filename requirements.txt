@@ -1,8 +1,12 @@
-dask[complete]==2.17.2
-pytest==5.4.2
-coverage==5.0
+dask[complete]==2.30.0
+Pillow==8.1.2
+pytest==5.4.3
+coverage==5.3
 pytest-cov==2.8.1
-pylint==2.5.2
-requests==2.23.0
+pylint==2.3.1
+requests==2.24.0
 dotmap==1.3.14
-Pillow==7.1.2
+## The following requirements were added by pip freeze:
+Jinja2==2.11.3
+numpy==1.16.4
+pandas==1.1.3
