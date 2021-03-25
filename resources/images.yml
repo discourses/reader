@@ -1,0 +1,7 @@
+source:
+    rootURL: "https://github.com/discourses/dermatology/raw/master/data/images/"
+    metadataFileURL: "https://raw.githubusercontent.com/discourses/dermatology/master/data/isic_2019_metadata.csv"
+    fileStringsField: "image"
+    fileStringsIncludeExt: false
+    archived: false
+    ext: ".jpg"

@@ -4,6 +4,7 @@ import random
 import requests
 import pathlib
 
+import config
 import src.io.arguments
 import src.io.source
 
@@ -15,14 +16,18 @@ class TestInterface:
     @pytest.fixture()
     def var(self):
         arguments = src.io.arguments.Arguments()
-        urlstring = 'https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/readerpython/parameters.yml'
+
+        configurations = config.Config()
+        urlstring = configurations.urlstring
 
         req = arguments.url(urlstring)
+
         return arguments.parameters(req)
 
     @pytest.fixture()
     def metadata(self, var) -> pandas.DataFrame:
         source = src.io.source.Source(var=var)
+
         return source.exc()
 
     @pytest.fixture()

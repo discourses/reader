@@ -1,5 +1,6 @@
 import pytest
 
+import config
 import src.io.arguments
 
 
@@ -11,7 +12,9 @@ class TestArguments:
 
     @pytest.fixture()
     def urlstring(self):
-        return 'https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/readerpython/parameters.yml'
+        configurations = config.Config()
+
+        return configurations.urlstring
 
     def test_url(self, urlstring, arguments):
         req = arguments.url(urlstring)

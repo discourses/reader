@@ -1,9 +1,8 @@
 dask
+pillow
 pytest
 coverage
 pytest-cov
 pylint
 requests
 dotmap
-pillow
-pandas
