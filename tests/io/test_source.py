@@ -1,18 +1,22 @@
+import pandas
 import pytest
 
-import pandas
-
+import config
 import src.io.arguments
 import src.io.source
+
 
 class TestSource:
 
     @pytest.fixture()
     def var(self):
         arguments = src.io.arguments.Arguments()
-        urlstring = 'https://raw.githubusercontent.com/greyhypotheses/dictionaries/develop/readerpython/parameters.yml'
+
+        configurations = config.Config()
+        urlstring = configurations.urlstring
 
         req = arguments.url(urlstring)
+
         return arguments.parameters(req)
 
     @pytest.fixture()
@@ -30,4 +34,3 @@ class TestSource:
 
         assert 'urlstring' in metadata.columns, "The field of URL strings is missing in the metadata data frame."
         assert 'filestring' in metadata.columns, "The field of file name strings is missing in the metadata data frame."
-
