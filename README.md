@@ -114,7 +114,7 @@ A few points w.r.t. Dask
 * Dask installed an old version of Pillow that triggers a GitHub security alert, hence<br>
 ```bash
   # 8.0.0 > 8.1.2
-  conda install -c anaconda pillow==8.1.2
+  conda install -c anaconda pillow==8.3.2
 ```
 
 * Dask installed an old version of Jinja2 that triggers a GitHub security alert, hence<br>
