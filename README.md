@@ -102,7 +102,7 @@ The explicitly installed packages are listed in [filter.txt](./docs/filter.txt).
 ```bash
   conda activate reader
     
-  conda install -c anaconda dask==2.30.0
+  conda install -c anaconda dask==2021.10.0
   conda install -c anaconda python==3.7.10
   conda install -c anaconda pytest coverage pytest-cov pylint
 ```
@@ -113,8 +113,7 @@ A few points w.r.t. Dask
 
 * Dask installed an old version of Pillow that triggers a GitHub security alert, hence<br>
 ```bash
-  # 8.0.0 > 8.1.2
-  conda install -c anaconda pillow==8.3.2
+  conda install -c anaconda pillow==8.4.0
 ```
 
 * Dask installed an old version of Jinja2 that triggers a GitHub security alert, hence<br>
