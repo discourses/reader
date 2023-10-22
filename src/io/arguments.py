@@ -31,7 +31,7 @@ class Arguments:
         """
 
         try:
-            req = requests.get(url=urlstring)
+            req = requests.get(url=urlstring, timeout=180)
             req.raise_for_status()
         except requests.exceptions.RequestException as err:
             raise err
@@ -65,7 +65,7 @@ class Arguments:
 
         assert isinstance(var.source.metadataFileURL, str)
         try:
-            req = requests.get(url=var.source.metadataFileURL)
+            req = requests.get(url=var.source.metadataFileURL,timeout=180)
             req.raise_for_status()
         except requests.exceptions.RequestException as err:
             raise err
