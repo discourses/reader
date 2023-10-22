@@ -41,14 +41,14 @@ python src/main.py
 
 Wherein [images.yml](https://raw.githubusercontent.com/greyhypotheses/discourses/develop/reader/resources/images.yml) is an input argument of parameters that guides the downloading of data files, whilst the optional argument `--limit` is used to specify the number of files to download.
 
-parameter | type | Descriptions
----  | ---  | ---
-`rootURL` | str | The root URL from whence files will be downloaded
-`metadataFileURL` | str | A CSV file that includes a field of file names that would be downloaded
-`fileStringsField` | str | The name of the field of file names
-`fileStringsIncludeExt` | bool | Do the file names, in the file names field, include file extensions?
-`archived` | bool | Archived files?  If true, they will be dearchived.  Presently, only zip files can be dearchived.
-`ext` | str | File extension, e.g., .zip.  This parameter is mandatory if `fileStringsIncludeExt` is false.
+| parameter               | type | Descriptions                                                                                      |
+|-------------------------|------|---------------------------------------------------------------------------------------------------|
+| `rootURL`               | str  | The root URL from whence files will be downloaded                                                 |
+| `metadataFileURL`       | str  | A CSV file that includes a field of file names that would be downloaded                           |
+| `fileStringsField`      | str  | The name of the field of file names                                                               |
+| `fileStringsIncludeExt` | bool | Do the file names, in the file names field, include file extensions?                              |
+| `archived`              | bool | Archived files?  If true, they will be dearchived.  Presently, only zip files can be de-archived. |
+| `ext`                   | str  | File extension, e.g., .zip.  This parameter is mandatory if `fileStringsIncludeExt` is false.     |
 
 <br>
 <br>
@@ -105,33 +105,27 @@ The explicitly installed packages are listed in [filter.txt](./docs/filter.txt).
   conda install -c anaconda dask==2021.10.0
   conda install -c anaconda python==3.7.10
   conda install -c anaconda pytest coverage pytest-cov pylint
-```
-
-<br>
-
-A few points w.r.t. Dask
-
-* Dask installed an old version of Pillow that triggers a GitHub security alert, hence<br>
-```bash
-  pip install Pillow==9.0.0
-```
-
-* Dask installed an old version of Jinja2 that triggers a GitHub security alert, hence<br>
-```bash
-  # 2.11.2 > 2.11.3
-  conda install -c anaconda jinja2==2.11.3
-```
-
-<br>
-
-Finally
-
-```bash
   conda install -c anaconda requests 
+  
+  # dotmap
   pip install dotmap==1.3.23
   
   # python-graphviz installs graphviz & python-graphiz
   conda install -c anaconda python-graphviz
+```
+
+<br>
+
+A few points w.r.t. ``dask``, ``dask`` might install an old version of ``Pillow`` that will trigger a GitHub security alert, hence<br>
+
+```bash
+  pip install Pillow
+```
+
+Additionally, ``dask`` might install an old version of ``Jinja2`` that will trigger a GitHub security alert, hence<br>
+
+```bash
+  pip install jinja2
 ```
 
 <br>
@@ -140,6 +134,15 @@ Finally
 ### References
 
 * [Renaming conda environments](https://www.scivision.dev/rename-conda-python-environment/): However, deleting then re-creatings seems to be the effective option
+
+<br>
+<br>
+
+<br>
+<br>
+
+<br>
+<br>
 
 <br>
 <br>
